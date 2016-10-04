@@ -1,0 +1,8 @@
+alias pow='touch ~/.pow/restart.txt'
+alias restart_app='touch $PWD/tmp/restart.txt'
+
+alias be='bundle exec'
+alias ls='ls -lh'
+alias lsa='ls -a'
+
+alias artisan='php artisan'
