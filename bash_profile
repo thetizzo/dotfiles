@@ -31,3 +31,6 @@ export HOMEBREW_GITHUB_API_TOKEN="07252b7ff3271664f62e2280cb09517ae0d3576e"
 # Cocoapods
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
+
+# To fix ssh keychain since OSX Sierra broke it
+ssh-add -K
