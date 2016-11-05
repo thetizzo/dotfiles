@@ -1,6 +1,7 @@
-alias a='atom'
+alias a='atom .'
 alias artisan='php artisan'
 alias be='bundle exec'
+alias dotfiles='cd ~/code/dotfiles'
 alias ls='ls -lh'
 alias lsa='ls -a'
 alias pow='touch ~/.pow/restart.txt'
