@@ -5,6 +5,7 @@ alias bo='EDITOR=atom bundle open'
 alias blog='jekyll serve --drafts'
 alias dotfiles='cd ~/code/dotfiles'
 alias h='heroku'
+alias kill_rspec="kill -11 $(ps aux | grep '[r]spec' | awk '{print $2}')"
 alias ls='ls -lh'
 alias lsa='ls -a'
 alias pow='touch ~/.pow/restart.txt'
