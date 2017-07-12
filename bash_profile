@@ -32,3 +32,7 @@ ssh-add -K
 eval "$(rbenv init -)"
 /usr/local/bin/rbenv rehash
 
+# This finds any running RSpec process and kills it
+function kill_rspec {
+  kill -11 $(ps aux | grep '[r]spec' | awk '{print $2}')
+}
