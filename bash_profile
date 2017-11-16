@@ -30,7 +30,6 @@ ssh-add -K
 
 # rbenv - always do this last so that ruby stuff is at the beginning of the path
 eval "$(rbenv init -)"
-/usr/local/bin/rbenv rehash
 
 # This finds any running process by name and kills it
 function murder {
