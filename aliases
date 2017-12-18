@@ -9,5 +9,6 @@ alias jsrv='jekyll serve'
 alias ls='ls -lh'
 alias lsa='ls -a'
 alias pow='touch ~/.pow/restart.txt'
+alias puma-dev-log='tail -f ~/Library/Logs/puma-dev.log'
 
 
