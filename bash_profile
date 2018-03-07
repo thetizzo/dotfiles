@@ -1,7 +1,9 @@
 export CLICOLOR=cons25
+export CODE_HOME="$HOME/code"
 
 # This is where the magic happens
 source "$HOME/.aliases"
+source "$CODE_HOME/dotfiles/secrets"
 
 export PATH="$PATH:/usr/local/sbin"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
@@ -21,9 +23,6 @@ parse_git_branch() {
 }
 
 export PS1="\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
-
-# For homebrew searching
-export HOMEBREW_GITHUB_API_TOKEN="07252b7ff3271664f62e2280cb09517ae0d3576e"
 
 # To fix ssh keychain since OSX Sierra broke it
 ssh-add -K
