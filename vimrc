@@ -26,5 +26,6 @@ syntax on
 " Enable file type detection and do language-dependent indenting.
 filetype plugin indent on
 
-" Turn on relative line numbers
+" Turn on relative line numbers and current line number
+set number
 set relativenumber
