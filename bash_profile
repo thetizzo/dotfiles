@@ -34,3 +34,7 @@ eval "$(rbenv init -)"
 function murder {
   kill -11 $(ps aux | grep $1 | grep -v grep | awk '{print $2}')
 }
+
+# Elixir
+export PATH="$PATH:/usr/local/bin/elixir"
+
