@@ -5,17 +5,15 @@ export CODE_HOME="$HOME/code"
 source "$HOME/.aliases"
 source "$CODE_HOME/dotfiles/secrets"
 
-export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:$HOME/.composer/vendor/bin"
-export PATH="/usr/local/mysql/bin:$PATH"
+# Set Default Editor
 export EDITOR=vim
 
-# MC Stuff
-export MC_COVERAGE=enabled
+# MySQL
+export PATH="/usr/local/mysql/bin:$PATH"
 export PATH=$PATH:"/usr/local/mysql/bin"
 export PATH=$PATH:"/usr/local/mysql/support-files"
-export PATH=$PATH:/usr/local/sbin
-export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+export PATH="$PATH:/usr/local/sbin"
+export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
 
 # Git branch in console prompt
 parse_git_branch() {
