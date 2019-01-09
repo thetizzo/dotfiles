@@ -24,8 +24,10 @@ parse_git_branch() {
 
 export PS1="\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
+# REMOVE -- removing this temporarily to see if it's been fixed since Sierra
 # To fix ssh keychain since OSX Sierra broke it
-ssh-add -K
+# ssh-add -K
+# REMOVE -- removing this temporarily to see if it's been fixed since Sierra
 
 # rbenv - always do this last so that ruby stuff is at the beginning of the path
 eval "$(rbenv init -)"
