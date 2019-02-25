@@ -1,9 +1,16 @@
 export CLICOLOR=cons25
 export CODE_HOME="$HOME/code"
 
+DOTFILES="$CODE_HOME/dotfiles"
+
 # This is where the magic happens
 source "$HOME/.aliases"
-source "$CODE_HOME/dotfiles/secrets"
+source "$DOTFILES/secrets"
+
+if [ -e "$DOTFILES/work_profile" ]
+then
+  source "$DOTFILES/work_profile"
+fi
 
 # Homebrew
 # Update less than all the time
