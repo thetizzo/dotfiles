@@ -5,6 +5,10 @@ export CODE_HOME="$HOME/code"
 source "$HOME/.aliases"
 source "$CODE_HOME/dotfiles/secrets"
 
+# Homebrew
+# Update less than all the time
+export HOMEBREW_AUTO_UPDATE_SECS=600000
+
 # Set Default Editor
 export EDITOR=vim
 
@@ -37,4 +41,3 @@ function murder {
 
 # Elixir
 export PATH="$PATH:/usr/local/bin/elixir"
-
