@@ -12,8 +12,7 @@ then
   source "$DOTFILES/work_profile"
 fi
 
-# Homebrew
-# Update less than all the time
+# Homebrew - Update less than all the time
 export HOMEBREW_AUTO_UPDATE_SECS=600000
 
 # Set Default Editor
