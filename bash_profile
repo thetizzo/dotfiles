@@ -48,3 +48,8 @@ function murder {
 
 # Elixir
 export PATH="$PATH:/usr/local/bin/elixir"
+
+# Android Emulator environment variables that need to be present to
+# open the emulator from Expo.
+export ANDROID_SDK="/Users/myuser/Library/Android/sdk"
+export PATH="/Users/myuser/Library/Android/sdk/platform-tools:$PATH"
