@@ -32,6 +32,29 @@ parse_git_branch() {
 
 export PS1="\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
+# Clean up merged git branched
+function gitclean {
+  if [[ -z "$1" ]]
+    then
+      echo "Please provide a root branch to use as the reference point for cleaning merged branches"
+      return
+  fi
+
+  local -r trunk="$1"
+  local -r protected_branches="(master$)|(develop$)|(staging$)"
+  git checkout $trunk
+
+  printf "\nMerged branches to be deleted:\n"
+  git branch --merged | grep -Ev $protected_branches
+  printf "\nAre you sure you want to delete these branches? (y/N)\n"
+  read answer
+
+  if [[ $answer = "y" ]]
+    then
+      git branch --merged | grep -Ev $protected_branches | xargs git branch -d
+  fi
+}
+
 # REMOVE -- removing this temporarily to see if it's been fixed since Sierra
 # To fix ssh keychain since OSX Sierra broke it
 # ssh-add -K
