@@ -32,7 +32,7 @@ parse_git_branch() {
 
 export PS1="\[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
-# Clean up merged git branched
+# Clean up merged git branches
 function gitclean {
   if [[ -z "$1" ]]
     then
