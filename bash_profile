@@ -80,3 +80,6 @@ export PATH="/Users/myuser/Library/Android/sdk/platform-tools:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Rust Lang
+export PATH="$HOME/.cargo/bin:$PATH"
