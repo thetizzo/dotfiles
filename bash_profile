@@ -1,6 +1,10 @@
 export CLICOLOR=cons25
 export CODE_HOME="$HOME/code"
 
+if [[ $PWD == $HOME ]]; then
+  cd $CODE_HOME
+fi
+
 DOTFILES="$CODE_HOME/dotfiles"
 
 # This is where the magic happens
