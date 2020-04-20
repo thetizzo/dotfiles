@@ -59,9 +59,6 @@ function gitclean {
   fi
 }
 
-# To fix ssh keychain since OSX Sierra broke it
-ssh-add -K
-
 # rbenv - always do this last so that ruby stuff is at the beginning of the path
 eval "$(rbenv init -)"
 
