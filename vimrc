@@ -6,3 +6,6 @@ set number
 
 " Turn on relative line numbers
 set relativenumber
+
+" Turn on fuzzy find
+set rtp+=/usr/local/opt/fzf

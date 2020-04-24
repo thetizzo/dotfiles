@@ -16,8 +16,29 @@ then
   source "$DOTFILES/work_profile"
 fi
 
-# Homebrew - Update less than all the time
+##########
+# Homebrew 
+
+# Update less than all the time
 export HOMEBREW_AUTO_UPDATE_SECS=600000
+
+# Autocompletion
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+    done
+  fi
+fi
+
+# Homebrew - End
+##########
+
+# fzf for Fuzzy find
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Set Default Editor
 export EDITOR=vim
