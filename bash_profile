@@ -83,6 +83,12 @@ function gitclean {
 # rbenv - always do this last so that ruby stuff is at the beginning of the path
 eval "$(rbenv init -)"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # This finds any running process by name and kills it
 function murder {
   kill -11 $(ps aux | grep $1 | grep -v grep | awk '{print $2}')
