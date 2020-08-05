@@ -80,6 +80,9 @@ function gitclean {
   fi
 }
 
+# direnv
+eval "$(direnv hook bash)"
+
 # rbenv - always do this last so that ruby stuff is at the beginning of the path
 eval "$(rbenv init -)"
 
