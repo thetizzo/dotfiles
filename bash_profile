@@ -86,10 +86,6 @@ eval "$(direnv hook bash)"
 # rbenv - always do this last so that ruby stuff is at the beginning of the path
 eval "$(rbenv init -)"
 
-# pyenv
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
