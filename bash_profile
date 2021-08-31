@@ -11,6 +11,7 @@ DOTFILES="$CODE_HOME/dotfiles"
 source "$HOME/.aliases"
 source "$DOTFILES/secrets"
 
+# Load work specific stuff if present
 if [ -e "$DOTFILES/work_profile" ]
 then
   source "$DOTFILES/work_profile"
