@@ -1,13 +1,9 @@
-alias a='atom .'
-alias artisan='php artisan'
 alias be='bundle exec'
-alias bo='EDITOR=atom bundle open'
+alias bo='EDITOR=nvim bundle open'
 alias blog='bundle exec jekyll serve --drafts'
 alias dotfiles='cd ~/code/dotfiles'
 alias h='heroku'
 alias ls='ls -lh'
 alias lsa='ls -a'
-alias pow='touch ~/.pow/restart.txt'
-alias puma-dev-log='tail -f ~/Library/Logs/puma-dev.log'
 
 
