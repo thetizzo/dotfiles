@@ -12,6 +12,7 @@
 if &loadplugins
   packadd! vim-sensible
   packadd! nerdtree
+  packadd! nerdtree-git-plugin
 endif
 
 " Turns on current line number
