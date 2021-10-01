@@ -4,20 +4,11 @@ Stand back in awe of the brilliance.
 
 # Installation
 
-## Programs/Languages to install
+```sh
+$ rake install
+```
 
-* Macvim
-	* Plugins
-* Ruby 
-	* rbenv
-	* latest ruby version
-	* set defaults
-* Rust
-* Postgres
+# TODO
 
-## Symlinks
-
-* bash_profile
-* vimrc
-* aliases
-* irbrc
+* Brewfile to install common stuff from Homebrew
+* zsh
