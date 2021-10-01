@@ -8,7 +8,7 @@ fi
 DOTFILES="$CODE_HOME/dotfiles"
 
 # This is where the magic happens
-source "$HOME/.aliases"
+source "$HOME/.bash_aliases"
 source "$DOTFILES/secrets"
 
 # Load work specific stuff if present
