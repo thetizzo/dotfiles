@@ -1,4 +1,3 @@
-
 " Plugins
 " Install Vim new plugins as git submodules
 "   git submodule add --name $NAME $URL $DEST
@@ -12,6 +11,7 @@
 "
 if &loadplugins
   packadd! vim-sensible
+  packadd! nerdtree
 endif
 
 " Turns on current line number
@@ -28,3 +28,15 @@ set tabstop=4 shiftwidth=2 softtabstop=0 expandtab smarttab
 
 " Syntax highlighting
 syntax on
+
+"""""""""
+" NERDTree Configuration
+
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * if exists(":NERDTree") | NERDTree | wincmd p | endif
+
+" Mirror the NERDTree before showing it. This makes it the same on all tabs.
+nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+
+" END NERDTree Configuration
+"""""""""
