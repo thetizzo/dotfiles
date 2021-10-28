@@ -11,8 +11,8 @@
 "
 if &loadplugins
   packadd! vim-sensible
-  packadd! nerdtree
-  packadd! nerdtree-git-plugin
+"  packadd! nerdtree
+"  packadd! nerdtree-git-plugin
 endif
 
 " Turns on current line number
@@ -34,10 +34,16 @@ syntax on
 " NERDTree Configuration
 
 " Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * if exists(":NERDTree") | NERDTree | wincmd p | endif
+"autocmd VimEnter * if exists(":NERDTree") | NERDTree | wincmd p | endif
 
 " Mirror the NERDTree before showing it. This makes it the same on all tabs.
-nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+"nnoremap <C-n> :NERDTreeMirror<CR>:NERDTreeFocus<CR>
+
+" Close the tab if NERDTree is the only window remaining in it.
+"autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Show hidden files
+"let NERDTreeShowHidden=1
 
 " END NERDTree Configuration
 """""""""
