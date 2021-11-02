@@ -11,6 +11,7 @@
 "
 if &loadplugins
   packadd! vim-sensible
+  packadd! rust.vim
 "  packadd! nerdtree
 "  packadd! nerdtree-git-plugin
 endif
@@ -29,6 +30,9 @@ set tabstop=4 shiftwidth=2 softtabstop=0 expandtab smarttab
 
 " Syntax highlighting
 syntax on
+
+" Require for the Rust.vim plugin
+filetype plugin indent on
 
 """""""""
 " NERDTree Configuration
