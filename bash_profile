@@ -44,13 +44,6 @@ fi
 # Set Default Editor
 export EDITOR=vim
 
-# MySQL
-export PATH="/usr/local/mysql/bin:$PATH"
-export PATH=$PATH:"/usr/local/mysql/bin"
-export PATH=$PATH:"/usr/local/mysql/support-files"
-export PATH="$PATH:/usr/local/sbin"
-export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
-
 # Git branch in console prompt
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
