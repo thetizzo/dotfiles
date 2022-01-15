@@ -88,6 +88,10 @@ function murder {
 # Elixir
 export PATH="$PATH:/usr/local/bin/elixir"
 
+# n - Node version manager
+export N_PREFIX=$HOME/.n
+export PATH=$N_PREFIX/bin:$PATH
+
 # Android Emulator environment variables that need to be present to
 # open the emulator from Expo.
 export ANDROID_SDK="/Users/myuser/Library/Android/sdk"

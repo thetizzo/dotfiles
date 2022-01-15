@@ -11,4 +11,6 @@ $ rake install
 # TODO
 
 * Brewfile to install common stuff from Homebrew
+  * n - node version manager
+  * rbenv & ruby-build
 * zsh
