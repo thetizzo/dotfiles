@@ -15,6 +15,9 @@ set relativenumber
 " Spaces over tabs and 2 space tab width
 set tabstop=4 shiftwidth=2 softtabstop=0 expandtab
 
+" Show whitespace chars
+set list
+
 """"""""
 " Rust
 
@@ -24,7 +27,7 @@ let g:rustfmt_autosave = 1
 """"""""
 " Syntastic
 
-" Recommended Config for Beginners
+" Recommended config for beginners
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
