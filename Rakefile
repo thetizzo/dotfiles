@@ -12,7 +12,6 @@ task :install do
     id_dsa.pub
     git-crypt-key
     secrets
-    work_profile
   ]
 
   Dir['*'].each do |file|
