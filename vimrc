@@ -4,7 +4,6 @@ call plug#begin()
   Plug 'tpope/vim-sensible'
   Plug 'junegunn/fzf.vim'
   Plug 'preservim/nerdtree'
-  Plug 'vim-syntastic/syntastic'
   Plug 'rust-lang/rust.vim'
 call plug#end()
 
@@ -23,19 +22,6 @@ set list
 
 " Auto format Rust on save
 let g:rustfmt_autosave = 1
-
-""""""""
-" Syntastic
-
-" Recommended config for beginners
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 """""""""
 " NERDTree
@@ -67,3 +53,5 @@ autocmd BufWinEnter * if getcmdwintype() == '' | silent NERDTreeMirror | endif
 " Show hidden files
 let NERDTreeShowHidden=1
 
+" Open vertical splits to the right
+set splitright
