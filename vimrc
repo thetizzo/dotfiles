@@ -17,6 +17,9 @@ set tabstop=4 shiftwidth=2 softtabstop=0 expandtab
 " Show whitespace chars
 set list
 
+" Theme
+colorscheme torte
+
 """"""""
 " Rust
 
