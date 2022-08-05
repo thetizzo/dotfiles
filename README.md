@@ -4,13 +4,40 @@ Stand back in awe of the brilliance.
 
 # Installation
 
+## Install CLI binary
+
+## Run installation
 ```sh
-$ rake install
+$ tizzo install
 ```
 
-# TODO
+## Expectations
 
-* Brewfile to install common stuff from Homebrew
-  * n - node version manager
-  * rbenv & ruby-build
-* zsh
+* These should be careful not to overwrite anything existing.
+* Can install/reinstall individual packages (i.e. `thetizzo install brew`)
+* Uninstall?
+
+# Steps during installation
+
+1. Clone dotfiles repo
+1. Link dotfiles in home profile
+  * bash_profile
+  * aliases
+  * zshrc
+  * git_aliases
+  * gitignore_global
+  * irbrc
+  * vimrc
+  * aws/*?
+1. Make ~/code directory
+1. Vim configuration
+  * install plugins
+1. Installations
+  * Tools:
+    * homebrew
+    * git
+    * oh-my-zsh
+  * Languages:
+    * ruby
+    * rust
+    * python
