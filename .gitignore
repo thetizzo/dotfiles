@@ -1,5 +1,8 @@
 work_profile
+
+# Vim
 vim/.netrwhist
+vim/plugged/**
 
 # Generated files
 target/
