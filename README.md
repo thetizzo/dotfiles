@@ -4,7 +4,13 @@ Stand back in awe of the brilliance.
 
 # Installation
 
+Setup workspace
+  * Create `~/code` working directory
+  * Clone `dotfiles` repo into the working directory
+
 ## Install CLI binary
+clone dotfiles repo
+Add the binary to the PATH
 
 ## Run installation
 ```sh
