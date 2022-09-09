@@ -14,9 +14,9 @@ struct Cli {
 fn main() {
     let cli = Cli::parse();
 
-    match cli.command {
+    match &cli.command {
         Commands::Init(name) => {
-            // Init::init(name);
+            Init::init(name);
         },
         Commands::Install {} => todo!(),
     }
