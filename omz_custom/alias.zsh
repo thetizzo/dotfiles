@@ -1,4 +1,3 @@
-
 alias be='bundle exec'
 alias bo='EDITOR=vim bundle open'
 alias blog='bundle exec jekyll serve --drafts'
