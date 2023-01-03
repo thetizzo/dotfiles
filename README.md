@@ -35,9 +35,10 @@ $ tizzo install
   * irbrc
   * vimrc
   * aws/*?
+  * .config/nvim -> ~/.config/nvim
 1. Make ~/code directory
 1. Vim configuration
-  * install plugins
+  * :PackerSync
 1. Installations
   * Tools:
     * homebrew
