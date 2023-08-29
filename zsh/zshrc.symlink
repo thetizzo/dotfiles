@@ -87,7 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR=vim
+export EDITOR=nvim
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -101,3 +101,25 @@ export EDITOR=vim
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Direnv load
+eval "$(direnv hook zsh)"
+
+# Rbenv
+eval "$(rbenv init - zsh)"
+
+# Cargo
+# the . is a shell builtin that reads the file and executes it in the current shell environment
+# https://zsh.sourceforge.io/Doc/Release/Shell-Builtin-Commands.html
+. "$HOME/.cargo/env"
+
+# Terraform Autocomplete
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# Stuff
+export DOTFILES=~/code/mine/dotfiles
+
+alias vim=nvim

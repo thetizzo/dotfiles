@@ -1,50 +1,42 @@
 # theTizzo's dotfiles
 
-Stand back in awe of the brilliance.
+My main goal with this project is to be able to easily move between machine without having to worry the differences in configuration
+between these machines. To that end, these dotfiles should be easy to install and update.  It's should also be easy to figure out how
+to update the configuration of a specific tool on one system and update it everywhere.
 
-# Installation
-
-Setup workspace
-  * Create `~/code` working directory
-  * Clone `dotfiles` repo into the working directory
-
-## Install CLI binary
-clone dotfiles repo
-Add the binary to the PATH
-
-## Run installation
-```sh
-$ tizzo install
+## Installation
+```bash
+git clone https://github.com/thetizzo/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+script/bootstrap
 ```
 
-## Expectations
+## Structure
 
-* These should be careful not to overwrite anything existing.
-* Can install/reinstall individual packages (i.e. `thetizzo install brew`)
-* Uninstall?
+Everything's built around topic areas. If you're adding a new area to your
+forked dotfiles — say, "Java" — you can simply add a `java` directory and put
+files in there. Anything with an extension of `.zsh` will get automatically
+included into your shell. Anything with an extension of `.symlink` will get
+symlinked without extension into `$HOME` when you run `script/bootstrap`.
 
-# Steps during installation
+There's a few special files in the hierarchy.
 
-1. Clone dotfiles repo
-1. Link dotfiles in home profile
-  * bash_profile
-  * aliases
-  * zshrc
-  * git_aliases
-  * gitignore_global
-  * irbrc
-  * vimrc
-  * aws/*?
-  * .config/nvim -> ~/.config/nvim
-1. Make ~/code directory
-1. Vim configuration
-  * :PackerSync
-1. Installations
-  * Tools:
-    * homebrew
-    * git
-    * oh-my-zsh
-  * Languages:
-    * ruby
-    * rust
-    * python
+- **bin/**: Anything in `bin/` will get added to your `$PATH` and be made
+  available everywhere.
+- **topic/\*.zsh**: Any files ending in `.zsh` get loaded into your
+  environment.
+- **topic/path.zsh**: Any file named `path.zsh` is loaded first and is
+  expected to setup `$PATH` or similar.
+- **topic/completion.zsh**: Any file named `completion.zsh` is loaded
+  last and is expected to setup autocomplete.
+- **topic/install.sh**: Any file named `install.sh` is executed when you run `script/install`. To avoid being loaded automatically, its extension is `.sh`, not `.zsh`.
+- **topic/\*.symlink**: Any file ending in `*.symlink` gets symlinked into
+  your `$HOME`. This is so you can keep all of those versioned in your dotfiles
+  but still keep those autoloaded files in your home directory. These get
+  symlinked in when you run `script/bootstrap`.
+
+## Thanks
+
+For many years, I maintained a disorgnanized heap of dotfiles that required manual installation and symlinking any time I
+set up a new machine.  Then one day I ran across [Zach Holman's](https://github.com/holman) [dotfiles](https://github.com/holman/dotfiles)
+and really liked the layout of the project so I have based the structure and installation scripts of this project on Zach's.
