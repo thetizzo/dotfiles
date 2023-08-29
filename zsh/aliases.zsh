@@ -6,3 +6,4 @@ alias h='heroku'
 alias ls='ls -lh'
 alias lsa='ls -a'
 alias vim=nvim
+alias reload!='. ~/.zshrc'
