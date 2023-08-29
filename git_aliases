@@ -1,5 +1,0 @@
-[alias]
-  co = checkout
-  br = branch
-  st = status
-  pr = pull -r
