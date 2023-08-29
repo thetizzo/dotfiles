@@ -5,3 +5,4 @@ alias dotf='cd ~/code/dotfiles'
 alias h='heroku'
 alias ls='ls -lh'
 alias lsa='ls -a'
+alias vim=nvim

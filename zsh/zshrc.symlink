@@ -1,35 +1,49 @@
 # Shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 
-# User configuration
-
+# Set default editor
 export EDITOR=nvim
 
-# Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# Stash environment variables and other local config in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
 
-# Direnv load
-eval "$(direnv hook zsh)"
+# Display helpers
+function info() {
+  echo "Loading $(echo $1 | rev | cut -d'/' -f1-2 | rev)"
+}
 
-# Rbenv
-eval "$(rbenv init - zsh)"
+# all of our zsh files
+typeset -U config_files
+config_files=($ZSH/**/*.zsh)
 
-# Cargo
-# the . is a shell builtin that reads the file and executes it in the current shell environment
-# https://zsh.sourceforge.io/Doc/Release/Shell-Builtin-Commands.html
-. "$HOME/.cargo/env"
+# load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  info $file
+  source $file
+done
 
-# Terraform
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
-export PATH=$PATH:~/code/textus/terraform-versions
+# load everything but the path and completion files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+do
+  info $file
+  source $file
+done
 
-# Stuff
-export DOTFILES=~/code/mine/dotfiles
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -Uz compinit
+compinit
 
-alias vim=nvim
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  info $file
+  source $file
+done
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+unset config_files
