@@ -6,12 +6,10 @@ desc "install the dot files into user's home directory"
 task :install do
   replace_all = false
   excluded_files = %w[
-    Rakefile 
-    README.md 
-    LICENSE 
+    Rakefile
+    README.md
+    LICENSE
     id_dsa.pub
-    git-crypt-key
-    secrets
   ]
 
   Dir['*'].each do |file|

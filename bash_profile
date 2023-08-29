@@ -9,7 +9,6 @@ DOTFILES="$CODE_HOME/dotfiles"
 
 # This is where the magic happens
 source "$HOME/.bash_aliases"
-source "$DOTFILES/secrets"
 
 # Load work specific stuff if present
 if [ -e "$DOTFILES/work_profile" ]
@@ -18,7 +17,7 @@ then
 fi
 
 ##########
-# Homebrew 
+# Homebrew
 
 # Update less than all the time
 export HOMEBREW_AUTO_UPDATE_SECS=600000
