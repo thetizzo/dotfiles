@@ -40,22 +40,22 @@ done
 
 export ZSH=$HOME/.dotfiles
 
-# Set macOS defaults
-echo "› set macos defaults"
-$ZSH/macos/set-defaults.sh
+# macos stuff to do
+if test $(uname) = "Darwin"
+then
+	# Set macOS defaults
+	echo "› set macos defaults"
+	$ZSH/macos/set-defaults.sh
 
-# Install homebrew
-echo "› install homebrew"
-$ZSH/homebrew/install.sh 2>&1
+	# Install homebrew
+	echo "› install homebrew"
+	$ZSH/homebrew/install.sh 2>&1
 
-# Install homebrew bundle
-echo "› brew bundle"
-brew bundle --file $ZSH/homebrew/Brewfile --no-lock
+	# Upgrade homebrew
+	echo "› brew update"
+	brew update
+fi
 
-# Upgrade homebrew
-echo "› brew update"
-brew update
-
-# Install software
-echo "› $ZSH/script/install"
-$ZSH/script/install
+	# Install software
+	echo "› $ZSH/script/install"
+	$ZSH/script/install
