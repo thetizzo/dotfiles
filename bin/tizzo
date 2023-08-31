@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# dot
+# tizzo
 #
-# `dot` handles installation, updates, things like that. Run it periodically
+# `tizzo` handles installation, updates, things like that. Run it periodically
 # to make sure you're on the latest and greatest.
 
 set -e
@@ -11,9 +11,9 @@ parentDirectory="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
 dotfilesDirectory="$(cd "$( dirname "$parentDirectory" )" && pwd -P)"
 
 displayUsageAndExit() {
-	echo "dot -- dotfiles management"
+	echo "tizzo -- dotfiles management"
 	echo ""
-	echo "Usage: dot [options]"
+	echo "Usage: tizzo [options]"
 	echo ""
 	echo "Options:"
 	echo "  -e, --edit    Open dotfiles directory for editing"
@@ -47,6 +47,10 @@ $ZSH/macos/set-defaults.sh
 # Install homebrew
 echo "› install homebrew"
 $ZSH/homebrew/install.sh 2>&1
+
+# Install homebrew bundle
+echo "› brew bundle"
+brew bundle --file $ZSH/homebrew/Brewfile --no-lock
 
 # Upgrade homebrew
 echo "› brew update"
