@@ -13,8 +13,15 @@ then
 fi
 
 # Display helpers
-function info() {
+info() {
   echo "Loading $(echo $1 | rev | cut -d'/' -f1-2 | rev)"
+}
+
+# Add directory to the path without duplication
+pathadd() {
+  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+    PATH="$1:${PATH:+"$PATH"}"
+  fi
 }
 
 # all of our zsh files

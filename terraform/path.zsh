@@ -1,1 +1,1 @@
-export PATH=$PATH:~/code/textus/terraform-versions
+pathadd $HOME/code/textus/terraform-versions

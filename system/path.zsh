@@ -1,0 +1,1 @@
+pathadd $ZSH/bin
