@@ -9,9 +9,8 @@ then
   # Install the correct homebrew for each OS type
   if test "$(uname)" = "Darwin"
   then
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
-
 fi
 
 exit 0

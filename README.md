@@ -1,6 +1,6 @@
 # theTizzo's dotfiles
 
-My main goal with this project is to be able to easily move between machine without having to worry the differences in configuration
+My main goal with this project is to be able to easily move between machines without having to worry the differences in configuration
 between these machines. To that end, these dotfiles should be easy to install and update.  It's should also be easy to figure out how
 to update the configuration of a specific tool on one system and update it everywhere.
 

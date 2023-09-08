@@ -2,13 +2,10 @@
 #
 # rbenv and related
 
-if $(command -v brew)
+if test ! $(which rbenv)
 then
-  if "$(uname)" = "Darwin"
-  then
-    echo "  Installing Homebrew for you."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  fi
+  echo "  Installing rbenv"
+  curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
 fi
 
 exit 0

@@ -4,14 +4,6 @@ export ZSH=$HOME/.dotfiles
 # Set default editor
 export EDITOR=nvim
 
-# Stash environment variables and other local config in ~/.localrc. This means they'll stay out
-# of your main dotfiles repository (which may be public, like this one), but
-# you'll have access to them in your scripts.
-if [[ -a ~/.localrc ]]
-then
-  source ~/.localrc
-fi
-
 # Display helpers
 info() {
   echo "Loading $(echo $1 | rev | cut -d'/' -f1-2 | rev)"
@@ -41,6 +33,15 @@ do
   info $file
   source $file
 done
+
+# Stash environment variables and other local config in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+then
+  info "~/.localrc"
+  source ~/.localrc
+fi
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -Uz compinit
