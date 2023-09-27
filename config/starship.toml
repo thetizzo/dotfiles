@@ -74,6 +74,9 @@ symbol = " "
 [nodejs]
 symbol = " "
 
+[os]
+disabled = false
+
 [os.symbols]
 Alpaquita = " "
 Alpine = " "
@@ -135,3 +138,9 @@ symbol = " "
 
 [scala]
 symbol = " "
+
+[terraform]
+symbol = "󱁢 "
+
+[time]
+disabled = false
