@@ -2,15 +2,10 @@
 #
 # install n node version manager
 
-if test ! $(which n)
+if test ! $(which nvm)
 then
-  echo "  Installing n node version manager"
-  if test $(which brew)
-  then
-    brew install n
-  else
-    curl -L https://bit.ly/n-install | bash
-  fi
+  echo "  Installing nvm node version manager"
+  brew install nvm
 fi
 
 exit 0
