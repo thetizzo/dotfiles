@@ -1,3 +1,4 @@
 git/gitconfig.local.symlink
 config/iterm2/**
 config/grammarly-languageserver/**
+config/gh/hosts.yml
