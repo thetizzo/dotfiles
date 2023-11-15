@@ -2,14 +2,12 @@
 #
 # neovim
 
-if ! command -v nvim &> /dev/null; then
+if test ! $(which nvim); then
   echo "  Installing neovim for you."
-  if command -v brew &> /dev/null
-  then
+  if test $(which brew); then
     brew install neovim
     exit 0
-  elif command -v apt &> /dev/null
-  then
+  elif test $(which apt); then
     sudo apt install -y neovim
     exit 0
   else
