@@ -7,3 +7,8 @@ echo "Installing Homebrew..."
 echo "Installing software via brew..."
 HOMEBREW_BUNDLE_FILE=~/.local/share/tizzo/Brewfile
 brew bundle
+
+# Make fish default shell
+FISH_LOC=$(which fish)
+grep -q -F $FISH_LOC /etc/shells || echo $FISH_LOC >> /etc/shells
+chsh -s $FISH_LOC
