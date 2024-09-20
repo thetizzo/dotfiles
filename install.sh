@@ -1,8 +1,8 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-echo "Installing Homebrew..."
-if ! command -v brew
+if ! command -v brew &> /dev/null; then
+  echo "Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
