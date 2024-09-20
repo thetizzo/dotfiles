@@ -2,7 +2,9 @@
 set -e
 
 echo "Installing Homebrew..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if ! command -v brew
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 
 echo "Installing software via brew..."
 HOMEBREW_BUNDLE_FILE=~/.local/share/tizzo/Brewfile
