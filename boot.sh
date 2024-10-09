@@ -14,10 +14,20 @@ ascii_art="
 
 echo -e "$ascii_art"
 
-sudo apt-get update >/dev/null
-sudo apt-get install -y git >/dev/null
+if [ -x "$(command -v apt-get)" ]; then
+    echo "Installing git with apt..."
+    sudo apt-get update >/dev/null
+    sudo apt-get install -y git >/dev/null
+elif [ -x "$(command -v brew)" ]; then
+    echo "Installing git with brew..."
+    brew update >/dev/null
+    brew install git >/dev/null
+else
+    echo "No package manager found. Please install $1 manually."
+    exit 1
+fi
 
-echo "Cloning dotfiles..."
+echo "Cloning dotfiles repo..."
 rm -rf ~/.local/share/tizzo
 git clone https://github.com/thetizzo/dotfiles.git ~/.local/share/tizzo >/dev/null
 cd ~/.local/share/tizzo

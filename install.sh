@@ -1,16 +1,29 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-if ! command -v brew &> /dev/null; then
-  echo "Installing Homebrew..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# set up running environment
+if [ "$TIZZO_DEV_MODE" = "true" ]; then
+  export TIZZO_DIR=$HOME/code/dotfiles
+else
+  export TIZZO_DIR=$HOME/.local/share/tizzo
 fi
 
-echo "Installing software via brew..."
-HOMEBREW_BUNDLE_FILE=~/.local/share/tizzo/Brewfile
-brew bundle
+# Import functions
+source $TIZZO_DIR/utils/install.sh
+source $TIZZO_DIR/utils/package_manager_update.sh
+
+if [ ! "$TIZZO_DEV_MODE" = "true" ]; then
+  package_manager_update
+fi
+
+# Install
+source $TIZZO_DIR/install/terminal/bash.sh
+#install 'fish'
+
+# Configure
 
 # Make fish default shell
-FISH_LOC=$(which fish)
-grep -q -F $FISH_LOC /etc/shells || echo $FISH_LOC >> /etc/shells
-chsh -s $FISH_LOC
+# echo "Setting fish as default shell..."
+# FISH_LOC=$(which fish)
+# echo $FISH_LOC
+# chsh -s $FISH_LOC
