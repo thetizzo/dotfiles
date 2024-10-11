@@ -1,5 +1,5 @@
 # Install with the correct package manager
-install () {
+function install {
   echo "Installing $1..."
 
   if [ -x "$(command -v apt-get)" ]; then

@@ -1,1 +1,1 @@
-source $TIZZO_DIR/defaults/bash/rc
+source $TIZZO_PATH/defaults/bash/rc

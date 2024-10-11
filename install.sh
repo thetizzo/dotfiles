@@ -3,21 +3,21 @@ set -e
 
 # set up running environment
 if [ "$TIZZO_DEV_MODE" = "true" ]; then
-  export TIZZO_DIR=$HOME/code/dotfiles
+  export TIZZO_PATH=$HOME/code/dotfiles
 else
-  export TIZZO_DIR=$HOME/.local/share/tizzo
+  export TIZZO_PATH=$HOME/.local/share/tizzo
 fi
 
 # Import functions
-source $TIZZO_DIR/utils/install.sh
-source $TIZZO_DIR/utils/package_manager_update.sh
+source $TIZZO_PATH/utils/install.sh
+source $TIZZO_PATH/utils/package_manager_update.sh
 
 if [ ! "$TIZZO_DEV_MODE" = "true" ]; then
   package_manager_update
 fi
 
 # Install
-source $TIZZO_DIR/install/terminal/bash.sh
+source $TIZZO_PATH/install/terminal/bash.sh
 #install 'fish'
 
 # Configure
