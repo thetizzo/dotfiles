@@ -1,4 +1,4 @@
-package_manager_update () {
+function package_manager_update {
   if [ -x "$(command -v apt-get)" ]; then
     sudo apt-get update
   elif [ -x "$(command -v brew)" ]; then

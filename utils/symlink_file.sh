@@ -1,4 +1,4 @@
-source $TIZZO_DIR/utils/print.sh
+source $TIZZO_PATH/utils/print.sh
 
 symlink_file () {
   local src=$1 dst=$2
