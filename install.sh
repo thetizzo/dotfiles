@@ -44,5 +44,8 @@ export TIZZO_PATH=$HOME/.local/share/tizzo
 # Import functions
 source $TIZZO_PATH/utils/install.sh
 
+# Install common packages
+install less
+
 # Install
-source $TIZZO_PATH/install/terminal/bash.sh
+stow -S $TIZZO_PATH/dotfiles/bash
