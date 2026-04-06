@@ -19,7 +19,7 @@ if [ -x "$(command -v apt-get)" ]; then
     echo "Installing prereqs with apt..."
     sudo apt-get update >/dev/null
     sudo apt-get install -y git stow
-elif [-x "$(command -v pacman)" ]; then
+elif [ -x "$(command -v pacman)" ]; then
     echo "Installing prereqs with pacman..."
     sudo pacman -S --needed --noconfirm git stow
 elif [ -x "$(command -v brew)" ]; then
