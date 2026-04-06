@@ -4,6 +4,8 @@ function install {
 
   if [ -x "$(command -v apt-get)" ]; then
     sudo apt-get install $1
+  elif [ -x "$(command -v pacman)" ]; then
+    sudo pacman -S --needed --noconfirm $1
   elif [ -x "$(command -v brew)" ]; then
     brew install $1
   else

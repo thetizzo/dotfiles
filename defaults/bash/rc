@@ -1,6 +1,0 @@
-echo "Loaded bash"
-
-source $TIZZO_PATH/defaults/bash/shell
-source $TIZZO_PATH/defaults/bash/aliases
-source $TIZZO_PATH/defaults/bash/prompt
-source $TIZZO_PATH/defaults/bash/init
