@@ -13,8 +13,8 @@ source /usr/share/bash-completion/bash_completion
 alias be='bundle exec'
 alias bo='EDITOR=vim bundle open'
 alias blog='bundle exec jekyll serve --drafts'
-alias h='heroku'
-alias ls='ls -lh'
+alias ls='ls -lh --color=auto'
+alias grep='grep --color=auto'
 alias lsa='ls -a'
 
 
@@ -24,6 +24,7 @@ force_color_prompt=yes
 color_prompt=yes
 
 # Simple prompt with path in the window/pane title and carat for typing line
+# Arch Linux default: PS1='[\u@\h \W]\$ '
 PS1=$'\uf0a9 '
 PS1="\[\e]0;\w\a\]$PS1"
 
