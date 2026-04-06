@@ -11,6 +11,11 @@ cd ~/.dotfiles
 script/bootstrap
 ```
 
+## V2 Installation
+```bash
+curl -fsSL https://github.com/thetizzo/dotfiles/blob/version2/install.sh | bash
+```
+
 ## Structure
 
 Everything's built around topic areas. If you're adding a new area to your
