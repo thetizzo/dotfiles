@@ -48,16 +48,23 @@ rm -rf ~/.local/share/tizzo
 git clone https://github.com/thetizzo/dotfiles.git ~/.local/share/tizzo 2>&1 | indent
 cd ~/.local/share/tizzo
 
-info "Installation starting..."
+info "Starting the installation..."
 
-# set up running environment
+# Setting env vars 
+info "Setting environment variables..."
 export TIZZO_PATH=$HOME/.local/share/tizzo
+echo "TIZZO_PATH is set to $TIZZO_PATH"
 
 # Import functions
+info "Importing bash functions..."
 source $TIZZO_PATH/utils/install.sh
+source $TIZZO_PATH/utils/stow_conflict_free_install.sh
 
 # Install common packages
+info "Installing common packages..."
 install less
 
-# Install
-stow -S bash -d $TIZZO_PATH/dotfiles -t $HOME
+# Stow install for dotfiles
+# If a conflict is found a backup of the existing file will be made before the symlink is created
+info "Creating symlinks for dotfiles..."
+stow_install | indent
