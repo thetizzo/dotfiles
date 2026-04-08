@@ -14,5 +14,5 @@ stow_install() {
   done
 
   # Install dotfiles with stow
-  stow --dir="$STOW_DIR" --target="$STOW_TARGET" $PACKAGES
+  stow --dir="$STOW_DIR" --target="$STOW_TARGET" $PACKAGES 2>&1
 }
