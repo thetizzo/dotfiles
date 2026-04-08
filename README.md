@@ -13,7 +13,7 @@ script/bootstrap
 
 ## V2 Installation
 ```bash
-curl -fsSL https://github.com/thetizzo/dotfiles/blob/version2/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/thetizzo/dotfiles/refs/heads/main/install.sh | bash
 ```
 
 ## Structure
