@@ -60,4 +60,5 @@ source $TIZZO_PATH/utils/install.sh
 install less
 
 # Install
-stow -S $TIZZO_PATH/dotfiles/bash
+cd $TIZZO_PATH/dotfiles
+stow -S bash
