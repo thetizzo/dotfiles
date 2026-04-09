@@ -68,3 +68,12 @@ install less | indent
 # If a conflict is found a backup of the existing file will be made before the symlink is created
 info "Creating symlinks for dotfiles..."
 stow_install | indent
+
+# Examples
+# Eventually automate this with prompts
+warn "Remember to check $TIZZO_PATH/examples for local configs to manually install"
+for file in $TIZZO_PATH/examples; do
+  echo "cp $file ~/.$file" | indent
+done
+
+success "Finished! Enjoy your new machine!"
