@@ -63,6 +63,7 @@ source $TIZZO_PATH/utils/stow_conflict_free_install.sh
 # Install common packages
 info "Installing common packages..."
 install less | indent
+install github-cli | indent
 
 # Stow install for dotfiles
 # If a conflict is found a backup of the existing file will be made before the symlink is created
