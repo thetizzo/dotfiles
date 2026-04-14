@@ -10,6 +10,7 @@ source /usr/share/bash-completion/bash_completion
 
 # Set default editor
 export EDITOR=nvim
+export TIZZO_PATH=$HOME/.local/share/tizzo
 
 # Aliases
 alias be='bundle exec'

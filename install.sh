@@ -84,7 +84,7 @@ stow_install | indent
 # Examples
 # Eventually automate this with prompts
 warn "Remember to check $TIZZO_PATH/examples for local configs to manually install"
-for file in $TIZZO_PATH/examples; do
+for file in $TIZZO_PATH/examples/*; do
   echo "cp $file ~/.$file" | indent
 done
 
