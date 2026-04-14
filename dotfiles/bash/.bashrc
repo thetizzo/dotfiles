@@ -8,6 +8,8 @@ HISTFILESIZE="${HISTSIZE}"
 # Autocompletion
 source /usr/share/bash-completion/bash_completion
 
+# Set default editor
+export EDITOR=nvim
 
 # Aliases
 alias be='bundle exec'
@@ -16,6 +18,7 @@ alias blog='bundle exec jekyll serve --drafts'
 alias ls='ls -lh --color=auto'
 alias grep='grep --color=auto'
 alias lsa='ls -a'
+alias vim='nvim'
 
 
 # Prompt Styles
@@ -56,3 +59,16 @@ if command -v fzf &> /dev/null; then
   source /usr/share/bash-completion/completions/fzf
   source /usr/share/doc/fzf/examples/key-bindings.bash
 fi
+
+# Starship command prompt
+eval "$(starship init zsh)"
+
+# Stash environment variables and other local config in ~/.localrc. This means 
+# they'll stay out of the main dotfiles repository (which may be public, like 
+# this one), but you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+then
+  echo "~/.localrc"
+  source ~/.localrc
+fi
+

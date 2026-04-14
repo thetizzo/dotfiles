@@ -1,1 +1,0 @@
-pathadd $HOME/code/textus/terraform-versions

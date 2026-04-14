@@ -48,22 +48,32 @@ rm -rf ~/.local/share/tizzo
 git clone https://github.com/thetizzo/dotfiles.git ~/.local/share/tizzo 2>&1 | indent
 cd ~/.local/share/tizzo
 
-info "Starting the installation..."
+
+info "Starting installation..."
+
 
 # Setting env vars 
 info "Setting environment variables..."
 export TIZZO_PATH=$HOME/.local/share/tizzo
 echo "TIZZO_PATH is set to $TIZZO_PATH"
 
+
 # Import functions
 info "Importing bash functions..."
 source $TIZZO_PATH/utils/install.sh
 source $TIZZO_PATH/utils/stow_conflict_free_install.sh
 
+
 # Install common packages
 info "Installing common packages..."
 install less | indent
 install github-cli | indent
+install neovim | indent
+install mise | indent
+install ttf-fira-code | indent
+# install font-fira-code | indent --- this is the homebrew name
+install starship | indent
+
 
 # Stow install for dotfiles
 # If a conflict is found a backup of the existing file will be made before the symlink is created
