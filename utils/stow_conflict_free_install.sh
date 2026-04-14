@@ -3,9 +3,9 @@
 stow_install() {
   STOW_TARGET=$HOME
   STOW_DIR=$TIZZO_PATH/dotfiles
-  PACKAGES=$(ls $STOW_DIR)
+  PACKAGES=($(ls -d $STOW_DIR/*/  | xargs -I{} basename {}))
 
-  conflicts=$(stow -n --dir=$STOW_DIR --target=$STOW_TARGET $PACKAGES 2>&1 | grep -oP 'existing target \K\S+')
+  conflicts=$(stow -n --dir=$STOW_DIR --target=$STOW_TARGET "${PACKAGES[@]}" 2>&1 | grep -oP 'existing target \K\S+')
 
   # Resolve conflicts
   for f in $conflicts; do
@@ -14,5 +14,5 @@ stow_install() {
   done
 
   # Install dotfiles with stow
-  stow --dir="$STOW_DIR" --target="$STOW_TARGET" $PACKAGES 2>&1
+  stow --dir="$STOW_DIR" --target="$STOW_TARGET" "${PACKAGES[@]}" 2>&1
 }
