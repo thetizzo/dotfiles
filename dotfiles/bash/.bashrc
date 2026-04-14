@@ -57,7 +57,7 @@ if type brew &>/dev/null; then
 fi
 
 # Starship command prompt
-eval "$(starship init zsh)"
+eval "$(starship init bash)"
 
 # Stash environment variables and other local config in ~/.localrc. This means 
 # they'll stay out of the main dotfiles repository (which may be public, like 
