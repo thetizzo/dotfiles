@@ -67,6 +67,7 @@ source $TIZZO_PATH/utils/stow_conflict_free_install.sh
 # Install common packages
 info "Installing common packages..."
 install less | indent
+install bash-completion | indent
 install github-cli | indent
 install neovim | indent
 install mise | indent

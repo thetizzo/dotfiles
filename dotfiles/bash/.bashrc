@@ -18,6 +18,7 @@ alias blog='bundle exec jekyll serve --drafts'
 alias ls='ls -lh --color=auto'
 alias grep='grep --color=auto'
 alias lsa='ls -a'
+alias reload='source ~/.bashrc'
 alias vim='nvim'
 
 
@@ -28,8 +29,8 @@ color_prompt=yes
 
 # Simple prompt with path in the window/pane title and carat for typing line
 # Arch Linux default: PS1='[\u@\h \W]\$ '
-PS1=$'\uf0a9 '
-PS1="\[\e]0;\w\a\]$PS1"
+#PS1=$'\uf0a9 '
+#PS1="\[\e]0;\w\a\]$PS1"
 
 # Git branch in console prompt
 # parse_git_branch() {
@@ -52,12 +53,6 @@ if type brew &>/dev/null; then
       [[ -r "$COMPLETION" ]] && source "$COMPLETION"
     done
   fi
-fi
-
-# Fuzzy find
-if command -v fzf &> /dev/null; then
-  source /usr/share/bash-completion/completions/fzf
-  source /usr/share/doc/fzf/examples/key-bindings.bash
 fi
 
 # Starship command prompt
